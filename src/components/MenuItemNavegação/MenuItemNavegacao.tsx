@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 interface ItemProps{
     children: ReactNode;
     icone: IconBaseProps | Icon.IconProps;
-    toValue: string
+    toValue: string 
 }
 const ItemListaEstilizado = styled.li`
     display: flex;

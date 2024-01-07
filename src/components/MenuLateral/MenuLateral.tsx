@@ -7,21 +7,63 @@ import MenuItemNavegacao from "../MenuItemNavegação/MenuItemNavegacao";
 import * as Icon from '@phosphor-icons/react'
 import { ImExit } from "react-icons/im"
 import LogoFirstRoad from '../../assets/icons/Logo_FirstRoad_aside.svg'
+import { useEffect } from "react";
+import {TiThMenu} from 'react-icons/ti'
+import Home from "../../pages/Home";
 
 
+const Icone = styled(Link)`
+    display: none;
+    
+    @media screen and (max-width:1000px){
+        display: flex;
+        background-color: var(--principal-cor-2);
+        padding: 7px;
+        border-radius: 0 15px 15px 0;
+        position: absolute;
+        top: 20px;
+        right: -40px; 
+    }
+    
+`
+const SombraEstilizada = styled.div`
 
+    @media screen and (max-width: 1000px) {
+        height: 100svh;
+        width: 100vw;
+        background-color: #0000004f;
+        position: fixed;
+        top: 0;
+        right: 110vw;
+        overflow: hidden;
+        transition: .5s;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+    }
+`
 
 const MenuEstilizado = styled.aside`
-    display: block;
-    height: 100vh;
+    display: flex;
+    height: 100dvh;
     width: 270px;
     background-color: var(--principal-cor-2);
+    position: relative;
+    left: 0px;
+    transition: all 0.5s ease;
+    z-index: 1;
+
+    @media screen and (max-width: 1000px) {
+        position: absolute;
+        
+    }
 
     div{
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: 20px;
+        justify-content: space-around;
+        
 
         img{
             width: 100px;
@@ -29,11 +71,11 @@ const MenuEstilizado = styled.aside`
         
         div{
             position: relative;
-            a{
+            div{
                 width: 30px;
                 position: absolute;
-                top: 50px;
-                left: 42px;
+                top: 80px;
+                left: 75px;
                  
             }
         }
@@ -71,69 +113,113 @@ const MenuEstilizado = styled.aside`
 
 
 const MenuLateral = () => {
+    useEffect(() => {
+        const handleResize: any = () => {
+            const aside: any = document.getElementById("aside")
+            const eventoMenu: any = window.innerWidth
+
+            if (eventoMenu >= 768) {
+                aside.style.left = "0px"
+
+            } else {
+                aside.style.left = "-265px"
+            }
+        }
+
+        window.addEventListener("resize", handleResize)
+
+    }, [])
+
+    const mostrarMenu = () => {
+        const sombra: any = document.getElementById("sombra")
+        const body: any = document.getElementById("body")
+        const aside: any = document.getElementById("aside")
+       
+
+        if(window.getComputedStyle(aside).left == "0px") {
+            aside.style.left = "-265px"
+            sombra.style.right = "110vw"
+            body.style.overflow = "auto"
+        }else{
+            aside.style.left = "0px"
+            sombra.style.right = "0px"
+            body.style.overflow = "hidden"
+        }
+    }
+
+
+
     return (
-        <MenuEstilizado>
-            <div>
-
-                <img src={logoCaminhoes} alt="logo caminhoes" />
-
+        <>
+            <SombraEstilizada id="sombra" />
+            <MenuEstilizado id="aside">
+                
                 <div>
-                    <img src={fotoPadrao} alt="" />
-                    <a>
-                        <Link to="">
-                            <FaPen color="#FFFFFF" size={20} />
-                        </Link>
-                    </a>
-                </div>
 
-                <form>
-                    <ul>
+                    <img src={logoCaminhoes} alt="logo caminhoes" />
 
-                        <MenuItemNavegacao toValue="" icone={<FaHome size={25} color="#FFFFFF" />} >
-                            Tela Inicial
-                        </MenuItemNavegacao>
+                    <Icone to="#" onClick={mostrarMenu}>
+                        <TiThMenu  size={30} color='#FFFFFF' />
+                    </Icone>
 
-
-                        <MenuItemNavegacao toValue="" icone={<FaTruck size={25} color="#FFFFFF" />} >
-                            Avatar
-                        </MenuItemNavegacao>
-
-
-
-                        <MenuItemNavegacao toValue="" icone={<FaMapMarkedAlt size={25} color="#FFFFFF" />} >
-                            Trilha
-                        </MenuItemNavegacao>
-
-
-
-                        <MenuItemNavegacao toValue="" icone={<FaAddressBook size={25} color="#FFFFFF" />} >
-                            Agenda
-                        </MenuItemNavegacao>
-
-
-
-                        <MenuItemNavegacao toValue="" icone={<FaInfoCircle size={25} color="#FFFFFF" />} >
-                            Suporte
-                        </MenuItemNavegacao>
-
-
-
-                        <MenuItemNavegacao toValue="" icone={<Icon.Files size={25} color="#FFFFFF" weight="fill" />} >
-                            Certificados
-                        </MenuItemNavegacao>
-
-                    </ul>
-                </form>
-
-                <footer>
                     <div>
-                        <ImExit size={25} color="#FFFFFF" />
+                        <img src={fotoPadrao} alt="" />
+                        <div>
+                            <Link to="/editar">
+                                <FaPen color="#FFFFFF" size={20} />
+                            </Link>
+                        </div>
                     </div>
-                    <img src={LogoFirstRoad} alt="" />
-                </footer>
 
-            </div>
-        </MenuEstilizado>
+                    <form>
+                        <ul>
+
+                            <MenuItemNavegacao toValue="/" icone={<FaHome size={25} color="#FFFFFF" />} >
+                                Tela Inicial
+                            </MenuItemNavegacao>
+
+
+                            <MenuItemNavegacao toValue="" icone={<FaTruck size={25} color="#FFFFFF" />} >
+                                Avatar
+                            </MenuItemNavegacao>
+
+
+
+                            <MenuItemNavegacao toValue="" icone={<FaMapMarkedAlt size={25} color="#FFFFFF" />} >
+                                Trilha
+                            </MenuItemNavegacao>
+
+
+
+                            <MenuItemNavegacao toValue="" icone={<FaAddressBook size={25} color="#FFFFFF" />} >
+                                Agenda
+                            </MenuItemNavegacao>
+
+
+
+                            <MenuItemNavegacao toValue="" icone={<FaInfoCircle size={25} color="#FFFFFF" />} >
+                                Suporte
+                            </MenuItemNavegacao>
+
+
+
+                            <MenuItemNavegacao toValue="" icone={<Icon.Files size={25} color="#FFFFFF" weight="fill" />} >
+                                Certificados
+                            </MenuItemNavegacao>
+
+                        </ul>
+                    </form>
+
+                    <footer>
+                        <div>
+                            <ImExit size={25} color="#FFFFFF" />
+                        </div>
+                        <img src={LogoFirstRoad} alt="" />
+                    </footer>
+
+                </div>
+            </MenuEstilizado>
+        </>
     )
 }
 export default MenuLateral;

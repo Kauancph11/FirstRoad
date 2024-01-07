@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 interface ItemProps {
     children: ReactNode;
-    icone: IconBaseProps | Icon.IconProps;
+    icone: ReactNode;
     toValue: string
 }
 
@@ -25,6 +25,9 @@ const LinkEstilizado = styled(Link)`
         background-color: var(--principal-cor-4);
         border-radius: 25px;
     }
+    
+
+    
 `
 
 const NavegacaoEstilizada = styled.li`
@@ -32,7 +35,11 @@ const NavegacaoEstilizada = styled.li`
     height: 150px;
     background-color: var(--principal-cor-2);
     border-radius: 25px;
-    
+
+    @media screen and (max-width: 420px){
+        width: 130px;
+        height: 130px;
+    }
 `
 
 
@@ -41,9 +48,9 @@ const NavegacaoHome = (props: ItemProps) => {
         <>
             <NavegacaoEstilizada>
                 <LinkEstilizado to={props.toValue}>
-                    <>
+                    <div>
                         {props.icone}
-                    </>
+                    </div>
                     <span>{props.children}</span>
                 </LinkEstilizado>
             </NavegacaoEstilizada>

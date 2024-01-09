@@ -179,13 +179,13 @@ const MenuLateral = () => {
                             </MenuItemNavegacao>
 
 
-                            <MenuItemNavegacao toValue="" icone={<FaTruck size={25} color="#FFFFFF" />} >
+                            <MenuItemNavegacao toValue="/avatar" icone={<FaTruck size={25} color="#FFFFFF" />} >
                                 Avatar
                             </MenuItemNavegacao>
 
 
 
-                            <MenuItemNavegacao toValue="" icone={<FaMapMarkedAlt size={25} color="#FFFFFF" />} >
+                            <MenuItemNavegacao toValue="/trilha" icone={<FaMapMarkedAlt size={25} color="#FFFFFF" />} >
                                 Trilha
                             </MenuItemNavegacao>
 
@@ -197,7 +197,7 @@ const MenuLateral = () => {
 
 
 
-                            <MenuItemNavegacao toValue="" icone={<FaInfoCircle size={25} color="#FFFFFF" />} >
+                            <MenuItemNavegacao toValue="/suporte" icone={<FaInfoCircle size={25} color="#FFFFFF" />} >
                                 Suporte
                             </MenuItemNavegacao>
 

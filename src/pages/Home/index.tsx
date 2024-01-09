@@ -52,19 +52,19 @@ const Home = () => {
                 <ListaEstilizada>
 
                     <ul>
-                        <NavegacaoHome toValue="" icone={<FaUser size={50} />} >
+                        <NavegacaoHome toValue="/editar" icone={<FaUser size={50} />} >
                             Perfil
                         </NavegacaoHome>
 
 
 
-                        <NavegacaoHome toValue="" icone={<FaTruck size={50} />} >
+                        <NavegacaoHome toValue="/avatar" icone={<FaTruck size={50} />} >
                             Avatar
                         </NavegacaoHome>
 
 
 
-                        <NavegacaoHome toValue="" icone={<FaMapMarkedAlt size={50} />} >
+                        <NavegacaoHome toValue="/Trilha" icone={<FaMapMarkedAlt size={50} />} >
                             Trilha
                         </NavegacaoHome>
 

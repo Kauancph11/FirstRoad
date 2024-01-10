@@ -3,7 +3,7 @@ import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais"
 import ItemListaSuporte from "../../components/ItemListaSuporte/ItemListaSuporte"
 import MenuLateral from "../../components/MenuLateral/MenuLateral"
 import { Link } from "react-router-dom"
-import {BsFillChatSquareTextFill, BsTelephoneForwardFill} from 'react-icons/bs'
+import { BsFillChatSquareTextFill, BsTelephoneForwardFill } from 'react-icons/bs'
 
 const Secao = styled.section`
     width: 100%;
@@ -27,6 +27,10 @@ const TituloContainer = styled.div`
         font-family: PoppinsBold;
         font-size: 42px ;
         color: white;
+
+        @media screen and (max-width: 750px){
+            font-size: 30px;
+        }
     }
 `
 
@@ -42,6 +46,17 @@ const SecaoNav = styled.div`
     border-radius: 8px;
     position: absolute;
     background-color: #F3F3F3;
+
+    @media screen and (max-width: 520px){
+        width: 100vw;
+        
+    }
+
+    @media screen and (max-width: 1200px){
+        width:90%;
+
+    }
+    
 `
 
 const BarraPesquisa = styled.nav`
@@ -60,6 +75,10 @@ const BarraPesquisa = styled.nav`
         background-size: 30px;
         background-position: 99%;
         outline: none;
+
+        @media screen and (max-width: 750px){
+            width:90%;
+        }
 
         &::placeholder{
             color: black;
@@ -83,6 +102,15 @@ const LinksContainer = styled.div`
     nav{
         display: flex;
         flex-direction: column;
+
+        h2{
+            font-size: 25px;
+            font-family: PoppinsBold;
+
+            @media screen and (max-width: 750px){
+                font-size: 20px;
+            }
+        }
         
         ul{
             display: flex;
@@ -100,11 +128,26 @@ const LinksContainer = styled.div`
         gap: 10px;
         justify-content: space-evenly;
 
+        
+
         nav{
             width: 300px;
             height: 120px;
             box-shadow: 2px 2px 4px #0000004f;
             border-radius: 8px;
+
+            @media screen and (max-width: 750px){
+                width: 200px;
+                height: 100px;
+            }
+
+           
+
+            &:hover{
+                transition: .9s;
+                transform: scale(1.1);
+            
+            }
         }
     }
 `
@@ -114,14 +157,29 @@ const LinksEstilizado = styled(Link)`
     align-items: center;
     justify-content: center;
     height: 100%;
-    gap: 20px;
+    gap: 10px;
     cursor: pointer;
+    text-decoration: none;
 
     span{
         font-size: 20px;
-        text-decoration: none;
+        text-decoration: underline;
         color: black;
-        outline-style:none ;
+
+        @media screen and (max-width: 750px){
+            font-size: 16px;   
+        }
+    }
+`
+
+const IconeChat = styled(BsFillChatSquareTextFill)`
+    @media screen and (max-width: 750px){
+        width: 20px;
+    }
+`
+const IconeTelefone = styled(BsTelephoneForwardFill)`
+    @media screen and (max-width: 750px){
+        width: 20px;
     }
 `
 
@@ -175,7 +233,7 @@ const Suporte = () => {
                                 <nav>
                                     <LinksEstilizado to=''>
                                         <span>Suporte via chat</span>
-                                        <BsFillChatSquareTextFill size={30} color='black'/>
+                                        <IconeChat size={30} color='black' />
 
                                     </LinksEstilizado>
                                 </nav>
@@ -183,7 +241,7 @@ const Suporte = () => {
                                 <nav>
                                     <LinksEstilizado to=''>
                                         <span>Suporte via telefone</span>
-                                        <BsTelephoneForwardFill size={30} color='black'/>
+                                        <IconeTelefone size={30} color='black' />
                                     </LinksEstilizado>
                                 </nav>
                             </div>

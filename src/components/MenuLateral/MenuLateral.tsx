@@ -47,7 +47,7 @@ const MenuEstilizado = styled.aside`
     height: 100dvh;
     width: 270px;
     background-color: var(--principal-cor-2);
-    position: relative;
+    position: flex;
     left: 0px;
     transition: all 0.5s ease;
     z-index: 1;

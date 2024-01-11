@@ -30,6 +30,10 @@ const TituloContainer = styled.div`
 
         @media screen and (max-width: 750px){
             font-size: 30px;
+            @media screen and (max-width: 520px){
+                font-size: 25px;
+                padding-top: 20px;
+            }
         }
     }
 `
@@ -46,17 +50,12 @@ const SecaoNav = styled.div`
     border-radius: 8px;
     position: absolute;
     background-color: #F3F3F3;
-
-    @media screen and (max-width: 520px){
-        width: 100vw;
-        
-    }
-
     @media screen and (max-width: 1200px){
         width:90%;
-
+        @media screen and (max-width: 520px){
+            width: 100%;
+        }
     }
-    
 `
 
 const BarraPesquisa = styled.nav`
@@ -139,6 +138,11 @@ const LinksContainer = styled.div`
             @media screen and (max-width: 750px){
                 width: 200px;
                 height: 100px;
+
+                @media screen and (max-width: 520px){
+                    width: 75px;
+                    height: 75px;
+                }
             }
 
            
@@ -167,19 +171,31 @@ const LinksEstilizado = styled(Link)`
         color: black;
 
         @media screen and (max-width: 750px){
-            font-size: 16px;   
+            font-size: 16px;
+            
+            @media screen and (max-width: 520px){
+                display: none;
+            }
         }
+
+
     }
 `
 
 const IconeChat = styled(BsFillChatSquareTextFill)`
     @media screen and (max-width: 750px){
         width: 20px;
+        @media screen and (max-width: 520px){
+            width: 40px;
+        }
     }
 `
 const IconeTelefone = styled(BsTelephoneForwardFill)`
     @media screen and (max-width: 750px){
         width: 20px;
+        @media screen and (max-width: 520px){
+            width: 40px;
+        }
     }
 `
 

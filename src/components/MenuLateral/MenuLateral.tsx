@@ -203,7 +203,7 @@ const MenuLateral = () => {
 
 
 
-                            <MenuItemNavegacao toValue="" icone={<Icon.Files size={25} color="#FFFFFF" weight="fill" />} >
+                            <MenuItemNavegacao toValue="/certificados" icone={<Icon.Files size={25} color="#FFFFFF" weight="fill" />} >
                                 Certificados
                             </MenuItemNavegacao>
 

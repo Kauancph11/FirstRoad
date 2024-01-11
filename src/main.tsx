@@ -6,6 +6,8 @@ import EditarPerfil from './pages/EditarPerfil'
 import Avatar from './pages/Avatar'
 import Trilha from './pages/Trilha'
 import Suporte from './pages/Suporte'
+import Certificados from './pages/Certificados'
+import VisualizarCertificado from './pages/VisualizarCertificado'
 
 
 
@@ -19,6 +21,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path='/avatar' element={<Avatar />} />
           <Route path='/trilha' element={<Trilha />} />
           <Route path='/suporte' element={<Suporte />} />
+          <Route path='/certificados' element={<Certificados />} />
+          <Route path='/visualizarCertificado' element={<VisualizarCertificado />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

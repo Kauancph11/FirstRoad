@@ -38,8 +38,6 @@ const ListaEstilizada = styled.div`
     
 `
 
-
-
 const Home = () => {
 
 

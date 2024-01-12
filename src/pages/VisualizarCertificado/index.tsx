@@ -14,16 +14,99 @@ const Secao = styled.section`
     justify-content: center;
     align-items: center;
     background-color: #F3F3F3;
-
-
-  
+    
+        
     img{
         width: 700px;
+        @media screen and (max-width: 768px) {
+            width: 550px;
+        }
+        @media screen and (max-width: 600px) {
+            width: 450px;
+        }
+        @media screen and (max-width: 470px) {
+            width: 350px;
+        }
+        @media screen and (max-width: 370px) {
+            width: 310px;
+        }
     }
-    
+`
 
+const Elementos = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     
 `
+
+const ElementosCompartilhar = styled.div`
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+`
+
+const Share = styled(FaShareAltSquare)`
+    width: 80px;
+    height: 80px;
+    @media screen and (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+    }
+    @media screen and (max-width: 470px) {
+        width: 40px;
+        height: 40px;
+    }
+`
+const WhatsApp = styled(IoLogoWhatsapp)`
+    width: 80px;
+    height: 80px;
+    @media screen and (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+    }
+    @media screen and (max-width: 470px) {
+        width: 40px;
+        height: 40px;
+    }
+`
+const Linkedin = styled(IoLogoLinkedin)`
+    width: 80px;
+    height: 80px;
+    @media screen and (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+    }
+    @media screen and (max-width: 470px) {
+        width: 40px;
+        height: 40px;
+    }
+`
+const Instagram = styled(AiFillInstagram)`
+    width: 80px;
+    height: 80px;
+    @media screen and (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+    }
+    @media screen and (max-width: 470px) {
+        width: 40px;
+        height: 40px;
+    }
+`
+const Download = styled(IoDownload)`
+    width: 80px;
+    height: 80px;
+    @media screen and (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+    }
+    @media screen and (max-width: 470px) {
+        width: 40px;
+        height: 40px;
+    }
+`
+
 
 const VisualizarCertificado = () => {
     return (
@@ -32,16 +115,16 @@ const VisualizarCertificado = () => {
             <main>
                 <MenuLateral />
                 <Secao>
-                    <div>
+                    <Elementos>
                         <img src={Certificado} alt="" />
-                        <div>
-                            <FaShareAltSquare />
-                            <AiFillInstagram />
-                            <IoLogoLinkedin />
-                            <IoLogoWhatsapp />
-                            <IoDownload />
-                        </div>
-                    </div>
+                        <ElementosCompartilhar>
+                            <Share />
+                            <Instagram />
+                            <Linkedin />
+                            <WhatsApp />
+                            <Download />
+                        </ElementosCompartilhar>
+                    </Elementos>
                 </Secao>
             </main>
         </>

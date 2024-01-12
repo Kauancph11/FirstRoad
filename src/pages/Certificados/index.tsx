@@ -78,6 +78,8 @@ const DivCertificado = styled.div`
 `
 
 
+
+
 const Certificados = () => {
     return (
         <>

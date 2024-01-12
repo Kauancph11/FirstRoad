@@ -38,7 +38,7 @@ const SombraEstilizada = styled.div`
         overflow: hidden;
         transition: .5s;
         backdrop-filter: blur(10px);
-        z-index: 1;
+        z-index: 2;
     }
 `
 
@@ -50,7 +50,7 @@ const MenuEstilizado = styled.aside`
     position: flex;
     left: 0px;
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 2;
 
     @media screen and (max-width: 1000px) {
         position: absolute;

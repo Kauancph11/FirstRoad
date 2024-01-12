@@ -12,6 +12,7 @@ const Secao = styled.section`
     flex-direction: column;
     align-items: center;
     position: relative;
+    background-color: #F3F3F3;
 `
 
 const TituloContainer = styled.div`

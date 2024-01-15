@@ -82,11 +82,6 @@ const H1Estilizado = styled.h1`
     font-family: PoppinsBold;
     color: var(--principal-cor-2);
 
-    @media screen and (max-width: 1200){
-        width: 1000px;
-    }
-
-
 `
 
 const PEstilizado =styled.p`

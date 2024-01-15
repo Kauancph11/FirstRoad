@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { ReactNode } from "react"
 import { IconBaseProps } from "react-icons";
-import Icon from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
 
@@ -10,7 +9,7 @@ import { Link } from "react-router-dom";
 
 interface ItemProps{
     children: ReactNode;
-    icone: IconBaseProps | Icon.IconProps;
+    icone: IconBaseProps
     toValue: string 
 }
 const ItemListaEstilizado = styled.li`

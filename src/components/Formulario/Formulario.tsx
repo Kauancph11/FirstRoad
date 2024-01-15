@@ -272,7 +272,9 @@ const Formulario = () => {
                         </select>
                     </DivInput>
                     <BotaoContainer>
-                        <BotaoPadrao >
+                        <BotaoPadrao 
+                            largura='200px' 
+                        >
                             Salvar
                         </BotaoPadrao>
                     </BotaoContainer>

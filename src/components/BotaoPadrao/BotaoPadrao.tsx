@@ -1,8 +1,9 @@
 import styled from "styled-components"
+import {CSSObject} from "styled-components"
 
-const BotaoEstilizado = styled.button`
+const BotaoEstilizado = styled.button<CSSObject>`
 
-    width: 150px;
+    width: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,16 +13,16 @@ const BotaoEstilizado = styled.button`
     font-size: 18px;
     color: #FFFFFF;
     border: none;
-     box-shadow: 2px 3px 5px #888888;
-    
+    box-shadow: 2px 3px 5px #888888;
+    cursor: pointer;
 `
 
 
 
-const BotaoPadrao = ({ children }: any) => {
-    return (
 
-        <BotaoEstilizado type="submit">{children}</BotaoEstilizado>
+const BotaoPadrao = ( {children}: any) => {
+    return (
+        <BotaoEstilizado  type="submit">{children}</BotaoEstilizado>
 
     )
 }

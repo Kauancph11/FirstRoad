@@ -21,6 +21,16 @@ const Secao = styled.section`
         font-family: PoppinsBold;
         color: var(--principal-cor-2);
         margin: 0px;
+        @media screen and (max-width: 600px){
+            font-size: 35px;
+        }
+
+        @media screen and (max-width: 510px){
+            font-size: 25px;
+        }
+        @media screen and (max-width: 385px){
+            font-size: 20px;
+        }
     }
 
     h2{
@@ -28,6 +38,15 @@ const Secao = styled.section`
         font-family: PoppinsBold;
         color: var(--principal-cor-2);
         margin: 0px;
+        @media screen and (max-width: 600px){
+            font-size: 20px;
+        }
+        @media screen and (max-width: 450px){
+            font-size: 16px;
+        }
+        @media screen and (max-width: 350px){
+            font-size: 14px;
+        }
     }
 
     textarea{
@@ -36,6 +55,9 @@ const Secao = styled.section`
         border: 4px solid #000000;
         background-color: #F3F3F3;
         border-radius: 8px;
+        @media screen and (max-width: 510px){
+            width: 90%;
+        }
     }
 `
 const IconsContainer = styled.div`
@@ -47,22 +69,98 @@ const IconsContainer = styled.div`
 const MuitoRuim = styled(BsEmojiAngry)`
     width: 80px;
     height: 80px;
+    cursor: pointer;
+    @media screen and (max-width: 600px){
+        width: 50px;
+        height: 50px;
+    }
+    @media screen and (max-width: 350px){
+        width: 45px;
+        height: 45px;
+    }
+    
+    &:hover{
+        color: var(--auxiliar-cor-6);
+        transition: 0.6s;
+        transform: scale(1.1);
+    }
+
 `
 const Ruim = styled(BsEmojiNeutral)`
     width: 80px;
     height: 80px;
+    cursor: pointer;
+    @media screen and (max-width: 600px){
+        width: 50px;
+        height: 50px;
+    }
+    @media screen and (max-width: 350px){
+        width: 45px;
+        height: 45px;
+    }
+
+    &:hover{
+        color: var(--principal-cor-6);
+        transition: 0.6s;
+        transform: scale(1.1);
+    }
+
 `
 const Regular = styled(BsEmojiLaughing)`
     width: 80px;
     height: 80px;
+    cursor: pointer;
+    @media screen and (max-width: 600px){
+        width: 50px;
+        height: 50px;
+    }
+    @media screen and (max-width: 350px){
+        width: 45px;
+        height: 45px;
+    }
+    &:hover{
+        color: yellow;
+        transition: 0.6s;
+        transform: scale(1.1);
+    }
 `
 const Bom = styled(BsEmojiGrin)`
     width: 80px;
     height: 80px;
+    cursor: pointer;
+    @media screen and (max-width: 600px){
+        width: 50px;
+        height: 50px;
+    }
+    @media screen and (max-width: 350px){
+        width: 45px;
+        height: 45px;
+    }
+
+    &:hover{
+        color: yellowgreen;
+        transition: 0.6s;
+        transform: scale(1.1);
+    }
 `
 const MuitoBom = styled(BsEmojiHeartEyes)`
     width: 80px;
     height: 80px;
+    cursor: pointer;
+    @media screen and (max-width: 600px){
+        width: 50px;
+        height: 50px;
+    }
+    @media screen and (max-width: 350px){
+        width: 45px;
+        height: 45px;
+    }
+
+    &:hover{
+        color: var(--auxiliar-cor-7);
+        transition: 0.6s;
+        transform: scale(1.1);
+    }
 `
 
 const BotaoContainer = styled.div`
@@ -73,7 +171,7 @@ const BotaoContainer = styled.div`
 `
 
 
-    
+
 
 
 const PesquisaSatisfacao = () => {
@@ -94,12 +192,12 @@ const PesquisaSatisfacao = () => {
                     </IconsContainer>
 
                     <h2>Conte para nós como foi sua experiência</h2>
-                        <textarea name="" id=""></textarea>
+                    <textarea name="" id=""></textarea>
                     <BotaoContainer>
                         <BotaoPadrao
-                            estilizar={{width: "200px"}}
+                            estilizar={{ width: "200px" }}
                         >
-                            Enviar Pesquisa
+                            Enviar
                         </BotaoPadrao>
                     </BotaoContainer>
                 </Secao>

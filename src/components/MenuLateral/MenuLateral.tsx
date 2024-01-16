@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, Route, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import logoCaminhoes from '../../assets/icons/logocaminhoes.png'
 import fotoPadrao from '../../assets/icons/fotopadrao_user_aside.svg'
@@ -112,7 +112,9 @@ const MenuEstilizado = styled.aside`
 
 
 
+
 const MenuLateral = () => {
+
     useEffect(() => {
         const handleResize: any = () => {
             const aside: any = document.getElementById("aside")

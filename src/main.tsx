@@ -10,6 +10,7 @@ import Certificados from './pages/Certificados'
 import VisualizarCertificado from './pages/VisualizarCertificado'
 import PgModulos from './pages/PgModulos'
 import PesquisaSatisfacao from './pages/PesquisaSatisfacao'
+import Login from './pages/Login'
 
 
 
@@ -18,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-          <Route path='/' element={<Home />}/>
+          <Route path='/' element={<Login />} />
           <Route path='/editar' element={<EditarPerfil />} />
           <Route path='/avatar' element={<Avatar />} />
           <Route path='/trilha' element={<Trilha />} />

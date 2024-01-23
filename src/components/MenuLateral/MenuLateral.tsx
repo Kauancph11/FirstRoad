@@ -9,8 +9,9 @@ import { ImExit } from "react-icons/im"
 import LogoFirstRoad from '../../assets/icons/Logo_FirstRoad_aside.svg'
 import { useEffect } from "react";
 import {TiThMenu} from 'react-icons/ti'
-import Home from "../../pages/Home";
+import Home from "../../pages/Colaborador/Home";
 
+const navigate = useNavigate()
 
 const Icone = styled(Link)`
     display: none;
@@ -46,7 +47,7 @@ const MenuEstilizado = styled.aside`
     display: flex;
     height: 100dvh;
     width: 270px;
-    background-color: var(--principal-cor-2);
+    background-color: ${? '#000000' : '#FFFFFF'};
     position: flex;
     left: 0px;
     transition: all 0.5s ease;
@@ -110,10 +111,14 @@ const MenuEstilizado = styled.aside`
 
 `
 
+interface MudarCorProps {
+    mudarCor: any
+}
 
 
 
-const MenuLateral = () => {
+
+const MenuLateral = ({mudarCor = false}: MudarCorProps) => {
 
     useEffect(() => {
         const handleResize: any = () => {
@@ -153,8 +158,8 @@ const MenuLateral = () => {
 
     return (
         <>
-            <SombraEstilizada id="sombra" />
-            <MenuEstilizado id="aside">
+            <SombraEstilizada  id="sombra" />
+            <MenuEstilizado $mudarCor={mudarCor} id="aside">
                 
                 <div>
 

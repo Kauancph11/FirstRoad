@@ -1,6 +1,6 @@
-import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais"
-import MenuLateral from "../../components/MenuLateral/MenuLateral"
-import Modulo from "../../components/Modulo/Modulo"
+import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
+import MenuLateral from "../../../components/MenuLateral/MenuLateral"
+import Modulo from "../../../components/Modulo/Modulo"
 
 
 const PgModulos = () => {

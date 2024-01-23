@@ -6,13 +6,13 @@ import { EffectCards } from "swiper/modules"
 
 import styled from "styled-components"
 import './Avatar.css'
-import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais"
-import MenuLateral from "../../components/MenuLateral/MenuLateral"
-import Fusca from '../../assets/image/Fusca.jpeg'
-import Lamborghini from '../../assets/image/Lamborghini.jpeg'
-import Truck from '../../assets/image/Scania Truck.jpeg'
-import Porsche from '../../assets/image/Porsche.jpeg'
-import Ducati from '../../assets/image/Ducati.jpeg'
+import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
+import MenuLateral from "../../../components/MenuLateral/MenuLateral"
+import Fusca from '../../../assets/image/Fusca.jpeg'
+import Lamborghini from '../../../assets/image/Lamborghini.jpeg'
+import Truck from '../../../assets/image/Scania Truck.jpeg'
+import Porsche from '../../../assets/image/Porsche.jpeg'
+import Ducati from '../../../assets/image/Ducati.jpeg'
 
 
 const SlideContainer = styled(Swiper)`

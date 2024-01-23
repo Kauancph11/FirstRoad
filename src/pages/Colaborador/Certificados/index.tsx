@@ -1,8 +1,8 @@
 import { GiPadlock } from "react-icons/gi";
-import Certificado from '../../assets/icons/certificado2.png'
+import Certificado from '../../../assets/icons/certificado2.png'
 import styled from "styled-components";
-import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais";
-import MenuLateral from "../../components/MenuLateral/MenuLateral";
+import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais";
+import MenuLateral from "../../../components/MenuLateral/MenuLateral";
 import { Link } from "react-router-dom";
 
 const Secao = styled.section`

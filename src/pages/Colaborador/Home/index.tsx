@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais"
-import MenuLateral from "../../components/MenuLateral/MenuLateral";
-import NavegacaoHome from "../../components/NavegacaoHome";
+import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
+import MenuLateral from "../../../components/MenuLateral/MenuLateral";
+import NavegacaoHome from "../../../components/NavegacaoHome";
 import { FaUser } from 'react-icons/fa'
 import { FaTruck, FaMapMarkedAlt, FaAddressBook } from 'react-icons/fa'
 

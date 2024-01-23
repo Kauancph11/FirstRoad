@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import BotaoPadrao from "../../components/BotaoPadrao/BotaoPadrao";
-import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais"
-import MenuLateral from "../../components/MenuLateral/MenuLateral"
+import BotaoPadrao from "../../../components/BotaoPadrao/BotaoPadrao";
+import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
+import MenuLateral from "../../../components/MenuLateral/MenuLateral"
 import { BsEmojiAngry, BsEmojiNeutral, BsEmojiLaughing, BsEmojiGrin, BsEmojiHeartEyes } from "react-icons/bs";
 import { useState } from "react";
 

@@ -1,11 +1,11 @@
 import styled, { keyframes } from "styled-components"
-import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais"
-import MenuLateral from "../../components/MenuLateral/MenuLateral"
-import Fabrica from '../../assets/image/Fabrica.png'
-import FabricaIcone2 from '../../assets/image/Fabrica2.png'
-import FabricaIcone3 from '../../assets/image/Fabrica3-PhotoRoom.png-PhotoRoom.png'
-import FabricaIcone4 from '../../assets/image/FabricaFinal-PhotoRoom.png-PhotoRoom.png'
-import Fusca1 from '../../assets/image/fusca1.png'
+import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
+import MenuLateral from "../../../components/MenuLateral/MenuLateral"
+import Fabrica from '../../../assets/image/Fabrica.png'
+import FabricaIcone2 from '../../../assets/image/Fabrica2.png'
+import FabricaIcone3 from '../../../assets/image/Fabrica3-PhotoRoom.png-PhotoRoom.png'
+import FabricaIcone4 from '../../../assets/image/FabricaFinal-PhotoRoom.png-PhotoRoom.png'
+import Fusca1 from '../../../assets/image/fusca1.png'
 import { Keyframes } from "styled-components/dist/types"
 
 const AreaVerde = styled.div`

@@ -1,4 +1,3 @@
-import Icon from "@phosphor-icons/react";
 import { ReactNode } from "react";
 import { IconBaseProps } from "react-icons";
 import { Link } from "react-router-dom";

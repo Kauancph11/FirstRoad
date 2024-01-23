@@ -130,7 +130,12 @@ const BotaoContainer = styled.div`
     height: 100%;
 `
 
-const Formulario = () => {
+interface ConteudoProps {
+    input1: any
+    input2: any
+}
+
+const Formulario = (props:ConteudoProps) => {
 
     const [nomeCompleto, setNomeCompleto] = useState<string>("")
     const [nif, setNif] = useState<string>("")
@@ -195,27 +200,11 @@ const Formulario = () => {
 
                     <DivSenhaContainer>
                         <DivSenha>
-                            <label htmlFor="Senha Antiga"> Senha Antiga</label>
-                            <input
-                                type="password"
-                                placeholder="********"
-                                required
-                                onChange={(e) => {
-                                    setSenha(e.target.value)
-                                }}
-                            />
+                            {props.input1}
                         </DivSenha>
 
                         <DivSenha>
-                            <label htmlFor="Senha "> Senha Nova</label>
-                            <input
-                                type="password"
-                                placeholder="********"
-                                required
-                                onChange={(e) => {
-                                    setSenha(e.target.value)
-                                }}
-                            />
+                           {props.input2}
                         </DivSenha>
                     </DivSenhaContainer>
 

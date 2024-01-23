@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import EstilosGlobais from "../../components/EstilosGlobais/EstilosGlobais"
-import ItemListaSuporte from "../../components/ItemListaSuporte/ItemListaSuporte"
-import MenuLateral from "../../components/MenuLateral/MenuLateral"
+import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
+import ItemListaSuporte from "../../../components/ItemListaSuporte/ItemListaSuporte"
+import MenuLateral from "../../../components/MenuLateral/MenuLateral"
 import { Link } from "react-router-dom"
 import { BsFillChatSquareTextFill, BsTelephoneForwardFill } from 'react-icons/bs'
 

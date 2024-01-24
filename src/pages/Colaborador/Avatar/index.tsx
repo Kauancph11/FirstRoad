@@ -13,6 +13,7 @@ import Lamborghini from '../../../assets/image/Lamborghini.jpeg'
 import Truck from '../../../assets/image/Scania Truck.jpeg'
 import Porsche from '../../../assets/image/Porsche.jpeg'
 import Ducati from '../../../assets/image/Ducati.jpeg'
+import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador"
 
 
 const SlideContainer = styled(Swiper)`
@@ -98,7 +99,9 @@ const Avatar = () => {
         <>
             <EstilosGlobais />
             <main>
-                <MenuLateral />
+                <MenuLateral toValue='/editar'>
+                    <LinksAsideColaborador />
+                </MenuLateral>
                 <Container>
                     <H1Estilizado>Avatar</H1Estilizado>
                     <PEstilizado>Sabemos que para viajar, escolher seu veículo é muito importante. Confira os modelos disponíveis e escolha seu parceiro de viagem!</PEstilizado>

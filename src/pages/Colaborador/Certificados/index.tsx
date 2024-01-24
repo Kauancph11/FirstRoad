@@ -4,6 +4,7 @@ import styled from "styled-components";
 import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais";
 import MenuLateral from "../../../components/MenuLateral/MenuLateral";
 import { Link } from "react-router-dom";
+import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador";
 
 const Secao = styled.section`
     display: flex;
@@ -41,7 +42,7 @@ const CertificadoImg = styled.img`
     }    
 `
 
-const SecaoCertificados= styled.div`
+const SecaoCertificados = styled.div`
     display: flex;
     gap: 25px;
 `
@@ -85,7 +86,9 @@ const Certificados = () => {
         <>
             <EstilosGlobais />
             <main>
-                <MenuLateral />
+                <MenuLateral toValue='/editar'>
+                    <LinksAsideColaborador />
+                </MenuLateral>
                 <Secao>
                     <h1>Certificados</h1>
                     <p>Acesse aqui os seus certificados adquiridos em sua jornada:</p>

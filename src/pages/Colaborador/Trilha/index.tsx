@@ -7,6 +7,7 @@ import FabricaIcone3 from '../../../assets/image/Fabrica3-PhotoRoom.png-PhotoRoo
 import FabricaIcone4 from '../../../assets/image/FabricaFinal-PhotoRoom.png-PhotoRoom.png'
 import Fusca1 from '../../../assets/image/fusca1.png'
 import { Keyframes } from "styled-components/dist/types"
+import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador"
 
 const AreaVerde = styled.div`
     width: 100%;
@@ -125,7 +126,9 @@ const Trilha = () => {
         <>
             <EstilosGlobais />
             <main>
-                <MenuLateral />
+                <MenuLateral toValue='/editar'>
+                    <LinksAsideColaborador />
+                </MenuLateral>
                 <AreaVerde>
                     <AreaInicioContainer>
                         <AreaInicio>

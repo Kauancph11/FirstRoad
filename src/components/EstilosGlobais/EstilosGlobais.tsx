@@ -13,7 +13,7 @@ const EstilosGlobais = createGlobalStyle`
         --principal-cor-5: #F2B705;
         --principal-cor-6: #F5A26B;
         --auxiliar-cor-1: #474966;
-        --auxiliar-cor-2: #46D3F3;
+        --auxiliar-cor-2: #0a0b0b;
         --auxiliar-cor-3: #426B7F;
         --auxiliar-cor-4: #72A091;
         --auxiliar-cor-5: #E75A55;

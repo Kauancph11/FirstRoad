@@ -4,6 +4,7 @@ import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
 import MenuLateral from "../../../components/MenuLateral/MenuLateral"
 import { BsEmojiAngry, BsEmojiNeutral, BsEmojiLaughing, BsEmojiGrin, BsEmojiHeartEyes } from "react-icons/bs";
 import { useState } from "react";
+import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador";
 
 
 const Secao = styled.section`
@@ -179,7 +180,9 @@ const PesquisaSatisfacao = () => {
         <>
             <EstilosGlobais />
             <main>
-                <MenuLateral />
+                <MenuLateral toValue='/editar'>
+                    <LinksAsideColaborador />
+                </MenuLateral>
                 <Secao>
                     <h1>Pesquisa de Satisfação</h1>
 

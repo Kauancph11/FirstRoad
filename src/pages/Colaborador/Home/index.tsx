@@ -4,6 +4,7 @@ import MenuLateral from "../../../components/MenuLateral/MenuLateral";
 import NavegacaoHome from "../../../components/NavegacaoHome";
 import { FaUser } from 'react-icons/fa'
 import { FaTruck, FaMapMarkedAlt, FaAddressBook } from 'react-icons/fa'
+import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador";
 
 
 const ListaEstilizada = styled.div`
@@ -46,7 +47,9 @@ const Home = () => {
         <>
             <EstilosGlobais />
             <main>
-                <MenuLateral />
+                <MenuLateral toValue='/editar'>
+                    <LinksAsideColaborador />
+                </MenuLateral>
                 <ListaEstilizada>
 
                     <ul>

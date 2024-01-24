@@ -4,6 +4,7 @@ import ItemListaSuporte from "../../../components/ItemListaSuporte/ItemListaSupo
 import MenuLateral from "../../../components/MenuLateral/MenuLateral"
 import { Link } from "react-router-dom"
 import { BsFillChatSquareTextFill, BsTelephoneForwardFill } from 'react-icons/bs'
+import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador"
 
 const Secao = styled.section`
     width: 100%;
@@ -209,7 +210,9 @@ const Suporte = () => {
         <>
             <EstilosGlobais />
             <main>
-                <MenuLateral />
+                <MenuLateral toValue='/editar'>
+                    <LinksAsideColaborador />
+                </MenuLateral>
                 <Secao>
                     <TituloContainer>
                         <h1>Como podemos ajudar?</h1>

@@ -6,6 +6,7 @@ import { IoLogoLinkedin, IoDownload } from "react-icons/io5";
 import { FaShareAltSquare } from "react-icons/fa";
 import Certificado from '../../../assets/icons/certificado.png'
 import styled from "styled-components";
+import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador";
 
 const Secao = styled.section`
     width: 100%;
@@ -111,9 +112,11 @@ const Download = styled(IoDownload)`
 const VisualizarCertificado = () => {
     return (
         <>
-            <EstilosGlobais />
+            <EstilosGlobais toValue='/editar'/>
             <main>
-                <MenuLateral />
+                <MenuLateral>
+                    <LinksAsideColaborador />
+                </MenuLateral>
                 <Secao>
                     <Elementos>
                         <img src={Certificado} alt="" />

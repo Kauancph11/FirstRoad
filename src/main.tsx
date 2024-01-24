@@ -13,6 +13,7 @@ import PesquisaSatisfacao from './pages/Colaborador/PesquisaSatisfacao'
 import Login from './pages/Colaborador/Login'
 import { AuthProvider } from './Context/AuthProvider'
 import EditarPerfilGestor from './pages/Gestor/EditarPerfil'
+import GestaoCadastro from './pages/Gestor/GestaoCadastro/GestaoCadastro'
 
 
 
@@ -32,14 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path='/visualizarCertificado' element={<VisualizarCertificado />} />
           <Route path='/pgModulos' element={<PgModulos />} />
           <Route path='/pesquisaSatisfacao' element={<PesquisaSatisfacao />} />
-
-
           <Route path='/editarGestor' element={<EditarPerfilGestor />} />
-
-
-
-
-
+          <Route path='/gestaoCadastro' element={<GestaoCadastro />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

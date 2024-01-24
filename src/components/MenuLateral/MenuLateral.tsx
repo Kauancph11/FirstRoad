@@ -1,17 +1,13 @@
-import { Link, Navigate, Route, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logoCaminhoes from '../../assets/icons/logocaminhoes.png'
 import fotoPadrao from '../../assets/icons/fotopadrao_user_aside.svg'
-import { FaHome, FaPen, FaTruck, FaMapMarkedAlt, FaAddressBook, FaInfoCircle } from 'react-icons/fa'
-import MenuItemNavegacao from "../MenuItemNavegação/MenuItemNavegacao";
-import * as Icon from '@phosphor-icons/react'
+import { FaPen } from 'react-icons/fa'
 import { ImExit } from "react-icons/im"
 import LogoFirstRoad from '../../assets/icons/Logo_FirstRoad_aside.svg'
 import { useEffect } from "react";
-import {TiThMenu} from 'react-icons/ti'
-import Home from "../../pages/Colaborador/Home";
+import { TiThMenu } from 'react-icons/ti'
 
-const navigate = useNavigate()
 
 const Icone = styled(Link)`
     display: none;
@@ -47,78 +43,75 @@ const MenuEstilizado = styled.aside`
     display: flex;
     height: 100dvh;
     width: 270px;
-    background-color: ${? '#000000' : '#FFFFFF'};
-    position: flex;
-    left: 0px;
-    transition: all 0.5s ease;
-    z-index: 2;
+    background-color:  ${(props: any) => props.backgroundColor || '#048ABF'};
+        position: flex;
+        left: 0px;
+        transition: all 0.5s ease;
+        z-index: 2;
 
-    @media screen and (max-width: 1000px) {
-        position: absolute;
-        
-    }
+        @media screen and(max-width: 1000px) {
+            position: absolute;
+
+        }
 
     div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
-        justify-content: space-around;
-        
-
-        img{
-            width: 100px;
-        }
-        
-        div{
-            position: relative;
-            div{
-                width: 30px;
-                position: absolute;
-                top: 80px;
-                left: 75px;
-                 
-            }
-        }
-
-        form{
-            width: 270px;
-            display: flex;
-            justify-content: center;
-            ul{
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                padding: 0;
-                align-items: flex-start;
-                gap: 20px;
-            }
-        }
-
-        footer{
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px;
+            padding-top: 20px;
+            justify-content: space-around;
+        
+
+        img{
+                width: 100px;
+            }
+        
+        div{
+                position: relative;
+            div{
+                    width: 30px;
+                    position: absolute;
+                    top: 80px;
+                    left: 75px;
+
+                }
+            }
+
+        form{
+                width: 270px;
+                display: flex;
+                justify-content: center;
+            ul{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                    padding: 0;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+            }
+
+        footer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             
             div{
-                cursor: pointer;
+                    cursor: pointer;
+                }
             }
+
+
         }
 
-        
-    }
-
-`
-
-interface MudarCorProps {
-    mudarCor: any
-}
+        `
 
 
 
 
-const MenuLateral = ({mudarCor = false}: MudarCorProps) => {
+
+const MenuLateral = ({backgroundColor, children, toValue}: any) => {
 
     useEffect(() => {
         const handleResize: any = () => {
@@ -141,13 +134,13 @@ const MenuLateral = ({mudarCor = false}: MudarCorProps) => {
         const sombra: any = document.getElementById("sombra")
         const body: any = document.getElementById("body")
         const aside: any = document.getElementById("aside")
-       
 
-        if(window.getComputedStyle(aside).left == "0px") {
+
+        if (window.getComputedStyle(aside).left == "0px") {
             aside.style.left = "-265px"
             sombra.style.right = "110vw"
             body.style.overflow = "auto"
-        }else{
+        } else {
             aside.style.left = "0px"
             sombra.style.right = "0px"
             body.style.overflow = "hidden"
@@ -155,24 +148,23 @@ const MenuLateral = ({mudarCor = false}: MudarCorProps) => {
     }
 
 
-
     return (
         <>
-            <SombraEstilizada  id="sombra" />
-            <MenuEstilizado $mudarCor={mudarCor} id="aside">
-                
+            <SombraEstilizada id="sombra" />
+            <MenuEstilizado backgroundColor={backgroundColor} id="aside">
+
                 <div>
 
                     <img src={logoCaminhoes} alt="logo caminhoes" />
 
                     <Icone to="#" onClick={mostrarMenu}>
-                        <TiThMenu  size={30} color='#FFFFFF' />
+                        <TiThMenu size={30} color='#FFFFFF' />
                     </Icone>
 
                     <div>
                         <img src={fotoPadrao} alt="" />
                         <div>
-                            <Link to="/editar">
+                            <Link to={toValue}>
                                 <FaPen color="#FFFFFF" size={20} />
                             </Link>
                         </div>
@@ -180,40 +172,7 @@ const MenuLateral = ({mudarCor = false}: MudarCorProps) => {
 
                     <form>
                         <ul>
-
-                            <MenuItemNavegacao toValue="/" icone={<FaHome size={25} color="#FFFFFF" />} >
-                                Tela Inicial
-                            </MenuItemNavegacao>
-
-
-                            <MenuItemNavegacao toValue="/avatar" icone={<FaTruck size={25} color="#FFFFFF" />} >
-                                Avatar
-                            </MenuItemNavegacao>
-
-
-
-                            <MenuItemNavegacao toValue="/trilha" icone={<FaMapMarkedAlt size={25} color="#FFFFFF" />} >
-                                Trilha
-                            </MenuItemNavegacao>
-
-
-
-                            <MenuItemNavegacao toValue="" icone={<FaAddressBook size={25} color="#FFFFFF" />} >
-                                Agenda
-                            </MenuItemNavegacao>
-
-
-
-                            <MenuItemNavegacao toValue="/suporte" icone={<FaInfoCircle size={25} color="#FFFFFF" />} >
-                                Suporte
-                            </MenuItemNavegacao>
-
-
-
-                            <MenuItemNavegacao toValue="/certificados" icone={<Icon.Files size={25} color="#FFFFFF" weight="fill" />} >
-                                Certificados
-                            </MenuItemNavegacao>
-
+                            {children}
                         </ul>
                     </form>
 

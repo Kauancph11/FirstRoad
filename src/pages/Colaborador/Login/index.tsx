@@ -2,20 +2,16 @@ import { Link } from "react-router-dom"
 import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
 import styled from "styled-components"
 import logo from "../../../assets/icons/Logo_FirstRoad_Vertical_Colorido.svg"
-import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
-import { IconBaseProps } from "react-icons";
+import { AiFillEye } from "react-icons/ai";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { useAuth } from "../../../Context/AuthProvider/useAuth";
 import { useNavigate } from 'react-router-dom'
-import Home from "../Home";
 import api from "../../../utils/api";
+import { Jwt, usuarioAutenticado } from "../../../services/auth";
 
-interface Icons {
-    iconeAtivo: IconBaseProps,
-    IconeInativo: IconBaseProps
-    ativo: IconBaseProps
-}
+
+
+
+
 
 const Secao = styled.section`
     background-image: url(../../../public/Estrada_manha.jpg);
@@ -152,50 +148,97 @@ const IconeSenha = styled(AiFillEye)`
 
 const Login = () => {
 
-    // // interface FormData {
-    // //     email: string
-    // //     senha: string
-    // // }
+    const navigate = useNavigate();
 
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     formState: { errors },
-    //     watch,
-    // } = useForm<FormData>()
+    const [email, setEmail] = useState<string>("");
+    const [senha, setSenha] = useState<string>("");
 
-    // const onSubmit = (data: FormData) => {
-    //     alert(JSON.stringify(data))
-    // }
-    
-    const auth = useAuth()
-    async function onFinish(values: { email: string, senha: string }, event: any) {
-        // event.preventDefault()
-        const history = useNavigate()
-        try {
-            await auth.authenticate(values.email, values.senha)
-        } catch (error) {
-            alert("erro")
-        }
+     const usuarioAutenticado = () => localStorage.getItem('usuario-login') !== null;
+
+     const Jwt  = () => {
+
+        let base64 = localStorage.getItem('usuario-login').split('.')[1];
+
+        return JSON.parse(window.atob(base64));
+    };
+
+    function realizarAutenticacao(event: any) {
+        event.preventDefault();
+
+
+
+
+        api.post("login", {
+            email: email,
+            senha: senha
+        })
+            .then((response: any) => {
+                console.log(response);
+
+                if (response.status === 200) {
+                    localStorage.setItem('usuario-login', response.data.token)
+                    let base64: any
+                    let usuarioLogin = localStorage.getItem('usuario-login');
+
+                    if (usuarioLogin && usuarioLogin.includes('.')) {
+                        base64 = usuarioLogin.split('.')[1];
+                        // Restante do código
+                    } else {
+                        console.error('A chave "usuario-login" não tem o formato esperado.');
+                    }
+                    console.log(response.data)
+                    console.log("Voce conseguiu acessar", response)
+                    console.log()
+                    console.log()
+                    switch () {
+                        case 'COLABORADOR':
+                            setTimeout(function () { window.location.href = `/home`; }, 1000);
+                            console.log(usuarioAutenticado())
+                            break;
+
+                        case 'ADMIN':
+                            setTimeout(function () { window.location.href = `/home`; }, 1000);
+                            console.log(usuarioAutenticado())
+                            break;
+
+                        case 'GESTOR':
+                            setTimeout(function () { window.location.href = `/home`; }, 1000);
+                            console.log(usuarioAutenticado())
+                            break;
+                    }
+                }
+            })
+            .catch((erro: any) => {
+                console.log(erro);
+            });
+
 
     }
-
     return (
         <>
             <EstilosGlobais />
             <main>
                 <Secao>
-                    <form onSubmit={() => (onFinish)}>
+                    <form method="POST" onSubmit={realizarAutenticacao}>
 
                         <LoginContainer
                         >
                             <img src={logo} alt="" />
                             <h1>Login</h1>
                             <InputContainer>
-                                <input type="email" placeholder="E-mail" />
+                                <input
+                                    type="email"
+                                    placeholder="E-mail"
+                                    onChange={(e) => setEmail(e.target.value)}
+
+                                />
                             </InputContainer>
                             <InputContainer>
-                                <input type="password" placeholder="Senha" />
+                                <input
+                                    type="password"
+                                    placeholder="Senha"
+                                    onChange={(e) => setSenha(e.target.value)}
+                                />
                                 <IconeSenha />
                             </InputContainer>
 
@@ -223,3 +266,5 @@ const Login = () => {
     )
 }
 export default Login
+
+

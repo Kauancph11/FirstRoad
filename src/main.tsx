@@ -11,32 +11,36 @@ import VisualizarCertificado from './pages/Colaborador/VisualizarCertificado'
 import PgModulos from './pages/Colaborador/PgModulos'
 import PesquisaSatisfacao from './pages/Colaborador/PesquisaSatisfacao'
 import Login from './pages/Colaborador/Login'
-import { AuthProvider } from './Context/AuthProvider'
+
 import EditarPerfilGestor from './pages/Gestor/EditarPerfil'
 import GestaoCadastro from './pages/Gestor/GestaoCadastro/GestaoCadastro'
+import CadastroColaborador from './pages/Gestor/CadastroColaborador'
+import Conteudo from './pages/Colaborador/Conteudo'
 
 
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/editar' element={<EditarPerfil />} />
-          <Route path='/avatar' element={<Avatar />} />
-          <Route path='/trilha' element={<Trilha />} />
-          <Route path='/suporte' element={<Suporte />} />
-          <Route path='/certificados' element={<Certificados />} />
-          <Route path='/visualizarCertificado' element={<VisualizarCertificado />} />
-          <Route path='/pgModulos' element={<PgModulos />} />
-          <Route path='/pesquisaSatisfacao' element={<PesquisaSatisfacao />} />
-          <Route path='/editarGestor' element={<EditarPerfilGestor />} />
-          <Route path='/gestaoCadastro' element={<GestaoCadastro />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/editar' element={<EditarPerfil />} />
+        <Route path='/avatar' element={<Avatar />} />
+        <Route path='/trilha' element={<Trilha />} />
+        <Route path='/suporte' element={<Suporte />} />
+        <Route path='/certificados' element={<Certificados />} />
+        <Route path='/visualizarCertificado' element={<VisualizarCertificado />} />
+        <Route path='/pgModulos' element={<PgModulos />} />
+        <Route path='/pesquisaSatisfacao' element={<PesquisaSatisfacao />} />
+        <Route path='/editarGestor' element={<EditarPerfilGestor />} />
+        <Route path='/gestaoCadastro' element={<GestaoCadastro />} />
+        <Route path='/cadastroColaborador' element={<CadastroColaborador />} />
+        <Route path='/conteudo' element={<Conteudo />} />
+      </Routes>
+    </BrowserRouter>
+
   </React.StrictMode>,
 )

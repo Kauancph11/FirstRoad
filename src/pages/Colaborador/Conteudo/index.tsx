@@ -1,19 +1,22 @@
+import AcessoConteudo from "../../../components/AcessoConteudo/AcessoConteudo"
 import EstilosGlobais from "../../../components/EstilosGlobais/EstilosGlobais"
-import InputPadrao from "../../../components/InputPadrao/InputPadrao"
 import LinksAsideColaborador from "../../../components/LinksAsideColaborador/LinksAsideColaborador"
 import MenuLateral from "../../../components/MenuLateral/MenuLateral"
 
 
-const EditarPerfil = () => {
+const Conteudo = () => {
     return (
         <>
             <EstilosGlobais />
-            <main>
+            <main id="main">
                 <MenuLateral toValue='/editar'>
                     <LinksAsideColaborador />
                 </MenuLateral>
+
+                <AcessoConteudo />
             </main>
         </>
     )
 }
-export default EditarPerfil
+
+export default Conteudo

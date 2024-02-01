@@ -5,7 +5,7 @@ import fotoPadrao from '../../assets/icons/fotopadrao_user_aside.svg'
 import { FaPen } from 'react-icons/fa'
 import { ImExit } from "react-icons/im"
 import LogoFirstRoad from '../../assets/icons/Logo_FirstRoad_aside.svg'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { TiThMenu } from 'react-icons/ti'
 
 
@@ -19,7 +19,7 @@ const Icone = styled(Link)`
         border-radius: 0 15px 15px 0;
         position: absolute;
         top: 20px;
-        right: -40px; 
+        left: 265px; 
     }
     
 `
@@ -44,108 +44,102 @@ const MenuEstilizado = styled.aside`
     height: 100dvh;
     width: 270px;
     background-color:  ${(props: any) => props.backgroundColor || '#048ABF'};
-        position: flex;
-        left: 0px;
-        transition: all 0.5s ease;
-        z-index: 2;
+    position: flex;
+    left: 0px;
+    transition: all 0.5s ease;
+    z-index: 2;
 
-        @media screen and(max-width: 1000px) {
-            position: absolute;
+    @media screen and(max-width: 1000px) {
+        position: absolute;
 
-        }
+    }
 
     div{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            justify-content: space-around;
-        
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        justify-content: space-around;
+    
         img{
-                width: 100px;
-            }
+            width: 100px;
+        }
         
         div{
-                position: relative;
+            position: relative;
             div{
-                    width: 30px;
-                    position: absolute;
-                    top: 80px;
-                    left: 75px;
-
-                }
+                width: 30px;
+                position: absolute;
+                top: 80px;
+                left: 75px;
             }
+        }
 
         form{
-                width: 270px;
-                display: flex;
-                justify-content: center;
+            width: 270px;
+            display: flex;
+            justify-content: center;
             ul{
-                    display: flex;
-                    flex-direction: column;
-                    margin: 0;
-                    padding: 0;
-                    align-items: flex-start;
-                    gap: 20px;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+                align-items: flex-start;
+                gap: 20px;
                 }
             }
 
         footer{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
             
             div{
-                    cursor: pointer;
-                }
-            }
-
-
-        }
-
-        `
-
-
-
-
-
-const MenuLateral = ({backgroundColor, children, toValue}: any) => {
-
-    useEffect(() => {
-        const handleResize: any = () => {
-            const aside: any = document.getElementById("aside")
-            const eventoMenu: any = window.innerWidth
-
-            if (eventoMenu >= 768) {
-                aside.style.left = "0px"
-
-            } else {
-                aside.style.left = "-265px"
+                cursor: pointer;
             }
         }
 
-        window.addEventListener("resize", handleResize)
 
-    }, [])
+    }
 
-    const mostrarMenu = () => {
+`
+
+
+
+
+
+const MenuLateral = ({ backgroundColor, children, toValue }: any) => {
+
+    addEventListener("resize", () => {
+        const aside: any = document.getElementById("aside")
+        const eventoMenu: any = window.innerWidth
+        if (eventoMenu >= 1000) {
+            aside.style.left = "-265px"
+        }
+        else {
+            aside.style.left = "0px"
+        }
+    });
+
+
+
+    function mostrarMenu() {
+
         const sombra: any = document.getElementById("sombra")
-        const body: any = document.getElementById("body")
+        const main: any = document.getElementById("main")
         const aside: any = document.getElementById("aside")
 
-
-        if (window.getComputedStyle(aside).left == "0px") {
+        if (window.getComputedStyle(aside).left === "0px") {
             aside.style.left = "-265px"
             sombra.style.right = "110vw"
-            body.style.overflow = "auto"
-        } else {
+        }
+        else {
             aside.style.left = "0px"
             sombra.style.right = "0px"
-            body.style.overflow = "hidden"
         }
     }
+
 
 
     return (
@@ -157,7 +151,7 @@ const MenuLateral = ({backgroundColor, children, toValue}: any) => {
 
                     <img src={logoCaminhoes} alt="logo caminhoes" />
 
-                    <Icone to="#" onClick={mostrarMenu}>
+                    <Icone onClick={mostrarMenu}>
                         <TiThMenu size={30} color='#FFFFFF' />
                     </Icone>
 
